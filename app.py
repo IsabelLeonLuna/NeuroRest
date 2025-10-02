@@ -52,7 +52,7 @@ with st.sidebar:
 **¿Cómo funciona?**  
 El dispositivo utiliza señales fisiológicas,como el SPO2, en conjunto con sensores de movimiento para prevenir caídas nocturnas de adultos mayores. No utiliza aprendizaje automático.
 
-**¿Ha tenido algún incoveniente?
+**¿Ha tenido algún incoveniente?**
 Puede comunicarnos los problemas que se presenten en cualquier momento, nosotros le brindaremos atención.
 
 **¿Compatibilidad?**  
@@ -118,4 +118,5 @@ if user_msg:
     except Exception as e:
 
         st.error(f"Ocurrió un problema llamando a Groq: {e}")
+
 
