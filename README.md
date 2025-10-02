@@ -4,6 +4,7 @@ Asistente conversacional para **NeuroRest**, un dispositivo de **prevención de 
 Incluye una sección de presentación y un **chat** que responde preguntas sobre **uso**, **precio**, **conexión**, **carga** y **soporte técnico**.  
 
 > Demo local: `python -m streamlit run app.py`
+
 > LINK DE DEMO: https://neurorest-ebkldvuab7wkc9ukt4pf8s.streamlit.app/
 
 ---
