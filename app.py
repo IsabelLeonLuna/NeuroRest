@@ -52,8 +52,8 @@ with st.sidebar:
 **¿Cómo funciona?**  
 El dispositivo utiliza señales fisiológicas,como el SPO2, en conjunto con sensores de movimiento para prevenir caídas nocturnas de adultos mayores. No utiliza aprendizaje automático.
 
-**¿Necesita Wi-Fi?**  
-Sí, para notificaciones en tiempo real de la aplicación. Puede almacenar datos offline temporalmente.
+**¿Ha tenido algún incoveniente?
+Puede comunicarnos los problemas que se presenten en cualquier momento, nosotros le brindaremos atención.
 
 **¿Compatibilidad?**  
 Android/iOS para la app de cuidadores.
@@ -118,3 +118,4 @@ if user_msg:
     except Exception as e:
 
         st.error(f"Ocurrió un problema llamando a Groq: {e}")
+
