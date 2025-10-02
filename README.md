@@ -2,7 +2,6 @@
 
 Asistente conversacional para **NeuroRest**, un dispositivo de **prevención de caídas en adultos mayores**.  
 Incluye una sección de presentación y un **chat** que responde preguntas sobre **uso**, **precio**, **conexión**, **carga** y **soporte técnico**.  
-Las respuestas “oficiales” se gestionan desde `faqs.yaml` (sin tocar el código).
 
 > Demo local: `python -m streamlit run app.py`
 
