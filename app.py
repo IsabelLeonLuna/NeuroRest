@@ -3,17 +3,19 @@ import streamlit as st
 from groq import Groq
 from dotenv import load_dotenv
 
-st.set_page_config(page_title="Chatbot con IA", page_icon="💬", layout="centered")
-# Cargar la API key de forma segura
-try:
-    load_dotenv()  # Carga variables desde .env si existe (entorno local)
-    API_KEY = os.getenv("GROQ_API_KEY")  #para Groq; usar "OPENAI_API_KEY" si es OpenAI
-except:
-    API_KEY = st.secrets["GROQ_API_KEY"]
+st.set_page_config(page_title="NeuroRest", page_icon="🧠", layout="centered")
 
-os.environ["GROQ_API_KEY"] = API_KEY
-client = Groq()  # Cliente para invocar la API de Groq
+# Cargar claves: en Cloud usa st.secrets; en local puede existir .env
+load_dotenv()
+API_KEY = st.secrets.get("GROQ_API_KEY") or os.getenv("GROQ_API_KEY")
+MODEL  = st.secrets.get("GROQ_MODEL") or os.getenv("GROQ_MODEL") or "llama-3.1-8b-instant"
 
+if not API_KEY:
+    st.error("Falta GROQ_API_KEY en Settings → Secrets (o en .env para local).")
+    st.stop()
+
+# Inicializa el cliente pasando la clave directamente (no uses os.environ[...] = ...).
+client = Groq(api_key=API_KEY) # Cliente para invocar la API de Groq
 
 # ------------------ Hero / Descripción del producto ------------------
 st.title("🧠 NeuroRest — Prevención de caídas en adultos mayores")
@@ -114,4 +116,5 @@ if user_msg:
         # Guardar respuesta
         st.session_state.chat_history.append({"role": "assistant", "content": answer})
     except Exception as e:
+
         st.error(f"Ocurrió un problema llamando a Groq: {e}")
