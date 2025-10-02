@@ -71,7 +71,7 @@ SYSTEM_PROMPT = (
     "casos de uso y consideraciones de privacidad. Sé empático, conciso y honesto. "
     "Si el usuario pide temas clínicos o regulatorios, responde con rigor y aclara alcances. "
     "El dispositivo cuesta 350 soles (PEN), solo se vende en Perú por el momento."
-    "Evita prometer curas. Ofrece opciones de contacto o demo cuando sea útil. En caso quieran reportar alguna falla, brindar nuestro correo: neuro-rest@gmail.com"
+    "Evita prometer curas. Ofrece opciones de contacto o demo cuando sea útil. En caso quieran reportar alguna falla, brindar nuestro correo: soporte@neurorest.com"
 )
 
 # ------------------ Estado de la conversación ------------------
@@ -118,6 +118,7 @@ if user_msg:
     except Exception as e:
 
         st.error(f"Ocurrió un problema llamando a Groq: {e}")
+
 
 
 
